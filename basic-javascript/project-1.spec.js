@@ -1,6 +1,6 @@
 const {multiplyByTen, subtractFive, areSameLength, areEqual,
      lessThanNinety, greaterThanFifty, add, subtract, divide, multiply,
-    getRemainder} = require('./project-1');
+    getRemainder, isEven, isOdd, square, cube, raiseToPower, roundNumber} = require('./project-1');
 
 // start testing!
  
@@ -63,41 +63,43 @@ it('should give the remainder of a number', ()=> {
     expect(four).toEqual(4)
 });
 
+it('should check if a number is even', () =>{
+  const zero = isEven(10)
+  expect(zero).toBe(true)
+});
 
+it('should check if a number is odd', () => {
+  const zero = isOdd(13)
+  expect(zero).toBe(true)
+});
+
+it('should check the square of a number', ()=> {
+  const sixteen = square(4)
+  expect(sixteen).toBe(16)
+});
+
+it('should give the cube of a number', ()=> {
+  const twentyseven = cube(3)
+  expect(twentyseven).toBe(27)
+}); 
+
+it('should raise the power of a number', ()=> {
+  const sixteen = raiseToPower(4, 2)
+  expect(sixteen).toBe(16)
+}); 
+
+it('should round a number ', ()=> {
+  const rounded = roundNumber(8.3)
+  expect(rounded).toBe(8)
+})
+
+// it('should ')
 /*
-
+ 
 
  
 
-const isEven = num => {
-  if (num % 2 === 0) {
-    return true;
-  }
-  return false;
-};
-
-const isOdd = num => {
-  if (num % 2 === 0) {
-    return false;
-  }
-  return true;
-};
-
-const square = num => {
-  return num * num;
-};
-
-const cube = num => {
-  return num * num * num;
-};
-
-const raiseToPower = (num, exponent) => {
-  return num ** exponent;
-};
-
-const roundNumber = num => {
-  return Math.round(num);
-};
+ 
 
 const roundUp = num => {
   return Math.ceil(num);
