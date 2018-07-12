@@ -91,68 +91,71 @@ it('should check if a number is odd', () => {
 })
 
 it('should check the square of a number', ()=> {
-  const sixteen = square(4)
+  const sixteen = helpers.square(4)
   expect(sixteen).toBe(16)
 })
 
 it('should give the cube of a number', ()=> {
-  const twentyseven = cube(3)
+  const twentyseven = helpers.cube(3)
   expect(twentyseven).toBe(27)
 })
 
 it('should raise the power of a number', ()=> {
-  const sixteen = raiseToPower(4, 2)
+  const sixteen = helpers.raiseToPower(4, 2)
   expect(sixteen).toBe(16)
 })
 
 it('should round a number ', ()=> {
-  const rounded = roundNumber(8.3)
-  expect(rounded).toBe(8)
+  const up = helpers.roundNumber(8.5)
+  const down = helpers.roundNumber(8.4)
+  expect(up).toBe(9);
+  expect(down).toBe(8);
 })
 
 it('should round up a number', () => {
-  const ceiling = roundUp(8.5)
-  expect(ceiling).toBe(9)
+  const nine = helpers.roundUp(8.5)
+  const ten = helpers.roundUp(10.2)
+
+  expect(nine).toBe(9)
+  expect(ten).toBe(11)
 })
 
 it('should add an exclamation point', () => {
-   expect.stringMatching("!")
+  //  expect.stringMatching("!")
+  const hi = helpers.addExclamationPoint('Hi');
+  expect(hi).toBe('Hi!')
 })
 
 it('should combine a first and last name', ()=> {
-  const expected = combineNames(x, y);
-  expect.stringMatching(`${expected}`)
+   const expected = helpers.combineNames('Stephanie', 'B' );
+   expect(expected).toBe("Stephanie B")
 
 })
 
 it('get a Greeting', ()=> {
+  const expected = helpers.getGreeting('Stephanie');
+  expect(expected).toBe('Hello Stephanie!')
   
 })
+it('should get the area of a rectangle', ()=> {
+  const area = helpers.getRectangleArea(5 ,5 )
+  expect(area).toBe(25)
+})
+
+it('should get the area of a triangle', ()=> {
+  const area = helpers.getTriangleArea(4, 5)
+  expect(area).toBe(10)
+})
+
+it('should get the area of a circle', ()=>{
+  const area = helpers.getCircleArea(2)
+  expect(area).toBe(12.566370614359172)
+})
+
+it('should get the volume of a rectangular prism', ()=> {
+  const volume = helpers.getRectangularPrismVolume( 3, 3 ,3 ) 
+  expect(volume).toBe(27)
+})
 });
-/*
 
-const combineNames = (firstName, lastName) => {
-  return `${firstName} ${lastName}`;
-};
-
-const getGreeting = name => {
-  return `Hello ${name}!`;
-};
-
-const getRectangleArea = (length, width) => {
-  return length * width;
-};
-
-const getTriangleArea = (base, height) => {
-  return 0.5 * base * height;
-};
-
-const getCircleArea = radius => {
-  return Math.PI * radius * radius;
-};
-
-const getRectangularPrismVolume = (length, width, height) => {
-  return width * height * length;
-};
-
- */ 
+ 
