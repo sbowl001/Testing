@@ -148,8 +148,10 @@ it('should get the area of a triangle', ()=> {
 })
 
 it('should get the area of a circle', ()=>{
-  const area = helpers.getCircleArea(2)
-  expect(area).toBe(12.566370614359172)
+  const area = helpers.getCircleArea(2);
+  const circleArea = Math.PI * 2 * 2; 
+  expect(area).toEqual(circleArea);
+  // expect(area).toBe(12.566370614359172)
 })
 
 it('should get the volume of a rectangular prism', ()=> {
