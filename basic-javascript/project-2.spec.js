@@ -116,53 +116,43 @@ it('should add an item to the front of an array', () => {
     // const first = funcs.returnFirst(arr)
     // expect(first).toBe(4)
 })
+
+it("should form a sentence out of words in a string", ()=> {
+    const string = funcs.wordsToSentence(['hello', 'hey', 'hallo'])
+    expect(string).toEqual('hello hey hallo')
+})
+
+it('should check if an item is in an array', ()=> {
+    const arr = [1 , 2 , 3]
+    const contain = funcs.contains(arr, 3)
+    const not = funcs.contains(arr, 4)
+    expect(contain).toBe(true)  //tobeTruthy
+    expect(not).toBe(false)     //tobeFalsy 
+})
+
+it('should add the numbers of an array', ()=> {
+    const nums = [1 , 2 , 3]
+    const sum = funcs.addNumbers(nums)
+    expect(sum).toBe(6)
+})
+it('should return the average of numbers in an array', ()=> {
+    const arr = [1 , 2 ,3]
+    const avg = funcs.averageTestScore(arr)
+    expect(avg).toBe(2)
+})
+it('should return the largest number in an array', ()=> {
+    const arr = [1 , 2, 3]
+    funcs.addItemToFront(arr, 4)
+    const largest = funcs.largestNumber(arr)
+    expect(largest).toBe(4)
+    expect(largest).not.toBe(2)
+})
 });
 /* 
  
+  
 
-const wordsToSentence = words => {
-  let newSentence = '';
-  for (let i = 0; i < words.length; i++) {
-    if (i === 0) {
-      newSentence += `${words[i]}`;
-    } else {
-      newSentence += ` ${words[i]}`;
-    }
-  }
-  return newSentence;
-};
-
-const contains = (arr, item) => {
-  let itemCounter = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === item) {
-      itemCounter++;
-    }
-  }
-  if (itemCounter > 0) {
-    return true;
-  }
-  return false;
-};
-
-const addNumbers = numbers => {
-  let sumOfNumbers = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sumOfNumbers += numbers[i];
-  }
-  return sumOfNumbers;
-};
-
-const averageTestScore = testScores => {
-  let totalSumScores = 0;
-  let numberOfScore = 0;
-  for (let i = 0; i < testScores.length; i++) {
-    totalSumScores += testScores[i];
-    numberOfScore++;
-  }
-  return totalSumScores / numberOfScore;
-};
-
+ 
 const largestNumber = numbers => {
   let biggestInteger = 0;
   for (let i = 0; i < numbers.length; i++) {
